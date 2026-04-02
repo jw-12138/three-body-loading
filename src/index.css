@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Dark theme (default) ── */
+:root {
+  color-scheme: light dark;
+  --bg: #000;
+  --fg: #fff;
+  --fg-muted: rgba(255, 255, 255, 0.45);
+  --fg-subtle: rgba(255, 255, 255, 0.3);
+  --canvas-bg: #000;
+  --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01)), #050505;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(255, 255, 255, 0.16);
+  --card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 24px 60px rgba(0, 0, 0, 0.36);
+  --card-shadow-hover: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 32px 80px rgba(0, 0, 0, 0.5);
+  --card-canvas-bg: radial-gradient(circle, rgba(255, 255, 255, 0.04), transparent 58%);
+  --pill-bg: rgba(255, 255, 255, 0.03);
+  --pill-border: rgba(255, 255, 255, 0.1);
+  --pill-fg: rgba(255, 255, 255, 0.6);
+  --pill-bg-hover: rgba(255, 255, 255, 0.08);
+  --pill-border-hover: rgba(255, 255, 255, 0.2);
+  --pill-fg-hover: #fff;
+  --modal-backdrop: rgba(0, 0, 0, 0.74);
+  --modal-border: rgba(255, 255, 255, 0.06);
+  --modal-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+  --formula-bg: rgba(255, 255, 255, 0.02);
+  --formula-border: rgba(255, 255, 255, 0.06);
+  --formula-fg: rgba(255, 255, 255, 0.85);
+  --status-bg: rgba(255, 255, 255, 0.02);
+  --status-border: rgba(255, 255, 255, 0.06);
+  --status-fg: rgba(255, 255, 255, 0.4);
+  --dot-color: #fff;
+}
+
+/* ── System prefers light (CSS-first, no JS needed) ── */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f5f5f5;
+    --fg: #111;
+    --fg-muted: rgba(0, 0, 0, 0.5);
+    --fg-subtle: rgba(0, 0, 0, 0.35);
+    --canvas-bg: #fff;
+    --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)), #e8e8e8;
+    --card-border: rgba(0, 0, 0, 0.08);
+    --card-border-hover: rgba(0, 0, 0, 0.12);
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+    --card-shadow-hover: 0 2px 6px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0, 0, 0, 0.05);
+    --card-canvas-bg: radial-gradient(circle, rgba(0, 0, 0, 0.03), transparent 58%);
+    --pill-bg: rgba(0, 0, 0, 0.04);
+    --pill-border: rgba(0, 0, 0, 0.1);
+    --pill-fg: rgba(0, 0, 0, 0.5);
+    --pill-bg-hover: rgba(0, 0, 0, 0.08);
+    --pill-border-hover: rgba(0, 0, 0, 0.2);
+    --pill-fg-hover: #111;
+    --modal-backdrop: rgba(0, 0, 0, 0.4);
+    --modal-border: rgba(0, 0, 0, 0.08);
+    --modal-shadow: 0 40px 100px rgba(0, 0, 0, 0.2);
+    --formula-bg: rgba(0, 0, 0, 0.03);
+    --formula-border: rgba(0, 0, 0, 0.08);
+    --formula-fg: rgba(0, 0, 0, 0.8);
+    --status-bg: rgba(0, 0, 0, 0.03);
+    --status-border: rgba(0, 0, 0, 0.08);
+    --status-fg: rgba(0, 0, 0, 0.4);
+    --dot-color: #111;
+  }
+}
+
+/* ── Explicit user override: light ── */
+[data-theme="light"] {
+  --bg: #f5f5f5;
+  --fg: #111;
+  --fg-muted: rgba(0, 0, 0, 0.5);
+  --fg-subtle: rgba(0, 0, 0, 0.35);
+  --canvas-bg: #fff;
+  --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)), #e8e8e8;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-border-hover: rgba(0, 0, 0, 0.12);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --card-shadow-hover: 0 2px 6px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0, 0, 0, 0.05);
+  --card-canvas-bg: radial-gradient(circle, rgba(0, 0, 0, 0.03), transparent 58%);
+  --pill-bg: rgba(0, 0, 0, 0.04);
+  --pill-border: rgba(0, 0, 0, 0.1);
+  --pill-fg: rgba(0, 0, 0, 0.5);
+  --pill-bg-hover: rgba(0, 0, 0, 0.08);
+  --pill-border-hover: rgba(0, 0, 0, 0.2);
+  --pill-fg-hover: #111;
+  --modal-backdrop: rgba(0, 0, 0, 0.4);
+  --modal-border: rgba(0, 0, 0, 0.08);
+  --modal-shadow: 0 40px 100px rgba(0, 0, 0, 0.2);
+  --formula-bg: rgba(0, 0, 0, 0.03);
+  --formula-border: rgba(0, 0, 0, 0.08);
+  --formula-fg: rgba(0, 0, 0, 0.8);
+  --status-bg: rgba(0, 0, 0, 0.03);
+  --status-border: rgba(0, 0, 0, 0.08);
+  --status-fg: rgba(0, 0, 0, 0.4);
+  --dot-color: #111;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Geist", "SF Pro Display", "PingFang SC", "Helvetica Neue", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+#root {
+  min-height: 100dvh;
+}

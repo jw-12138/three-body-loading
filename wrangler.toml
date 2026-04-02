@@ -1,0 +1,7 @@
+name = "three-body-loading"
+compatibility_date = "2026-04-02"
+account_id = "26acac7847f84fe7ad73a612929c7512"
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
